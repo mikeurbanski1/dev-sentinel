@@ -4,8 +4,6 @@ import "tfrun"
 
 param BC_API_KEY
 
-print("hello")
-
 body = {
     "organization" : tfrun.organization.name,
     "workspace" : {
@@ -24,9 +22,7 @@ body = {
     },
 }
 
-print(body)
-
-req = http.request("https://s5h5razkal.execute-api.us-west-2.amazonaws.com/v1/api/v1/terraformEnterprise/webhook").with_body(json.marshal(body)).with_header("Authorization", BC_API_KEY)
+req = http.request("https://www.bridgecrew.cloud/api/v1/terraformEnterprise/webhook").with_body(json.marshal(body)).with_header("Authorization", BC_API_KEY)
 resp = json.unmarshal(http.post(req).body).data
 
 if (length(resp.violations) > 0) {
