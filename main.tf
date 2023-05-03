@@ -7,5 +7,5 @@ resource "random_integer" "priority" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "fnskdjhyew89gsdoiga"
+  bucket = "fnskdjhyew89gsdoigaaa"
 }
